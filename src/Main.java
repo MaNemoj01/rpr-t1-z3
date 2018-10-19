@@ -2,28 +2,28 @@ public class Main {
 
     public static class Sat {
         public int sati, minute, sekunde;
-        public Sat(int sati, int minute, int sekunde) { Postavi(sati,minute,sekunde); }
-        void Postavi(int sati, int minute, int sekunde) { this.sati=sati; this.minute=minute; this.sekunde=sekunde; }
-        void Sljedeci() {
+        public Sat(int sati, int minute, int sekunde) { postavi(sati,minute,sekunde); }
+        void postavi(int sati, int minute, int sekunde) { this.sati=sati; this.minute=minute; this.sekunde=sekunde; }
+        void sljedeci() {
             sekunde++;
             if (sekunde==60) { sekunde=0; minute++; }
             if (minute==60) { minute=0; sati++; }
             if (sati==24) sati=0;
         }
-        void Prethodni() {
+        void prethodni() {
             sekunde--;
             if (sekunde==-1) { sekunde=59; minute--; }
             if (minute==-1) { minute=59; sati--; }
             if (sati==-1) sati=23;
         }
-        void PomjeriZa(int pomak) {
-            if (pomak>0) for (int i=0; i<pomak; i++) Sljedeci();
-		else for (int i=0; i<-pomak; i++) Prethodni();
+        void pomjeriZa(int pomak) {
+            if (pomak>0) for (int i=0; i<pomak; i++) sljedeci();
+		else for (int i=0; i<-pomak; i++) prethodni();
         }
         final int DajSate()  { return this.sati; }
         final int DajMinute()  { return this.minute; }
         final int DajSekunde()  { return this.sekunde; }
-        final void Ispisi()  { System.out.println(sati+":"+minute+":"+sekunde); }
+        final void ispisi()  { System.out.println(sati+":"+minute+":"+sekunde); }
 
     }
 
@@ -31,13 +31,13 @@ public class Main {
     {
 
         Sat s = new Sat (15,30,45);
-        s.Ispisi();
-        s.Sljedeci();
-        s.Ispisi();
-        s.PomjeriZa(-48);
-        s.Ispisi();
-        s.Postavi(0,0,0);
-        s.Ispisi();
+        s.ispisi();
+        s.sljedeci();
+        s.ispisi();
+        s.pomjeriZa(-48);
+        s.ispisi();
+        s.postavi(0,0,0);
+        s.ispisi();
 
     }
 }
