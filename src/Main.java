@@ -20,9 +20,9 @@ public class Main {
             if (pomak>0) for (int i=0; i<pomak; i++) sljedeci();
 		else for (int i=0; i<-pomak; i++) prethodni();
         }
-        final int DajSate()  { return this.sati; }
-        final int DajMinute()  { return this.minute; }
-        final int DajSekunde()  { return this.sekunde; }
+        final int dajSate()  { return this.sati; }
+        final int dajMinute()  { return this.minute; }
+        final int dajSekunde()  { return this.sekunde; }
         final void ispisi()  { System.out.println(sati+":"+minute+":"+sekunde); }
 
     }
